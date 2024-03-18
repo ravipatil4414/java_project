@@ -25,7 +25,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    sh 'docker run -p 8098:8098 --name my-java-app-container -d my-java-app' // Run Docker container in detached mode
+                    sh 'docker run -p 8098:8080 --name my-java-app-container -d my-java-app' // Run Docker container in detached mode
                 }
             }
         }
