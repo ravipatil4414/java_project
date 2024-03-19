@@ -25,7 +25,12 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    sh 'docker run -p 8098:8080 --name my-java-app-container -d my-java-app' // Run Docker container in detached mode
+                    // Stop and remove the existing container if it exists
+                    sh 'docker stop my-java-app-container || true'
+                    sh 'docker rm my-java-app-container || true'
+                    
+                    // Run Docker container in detached mode
+                    sh 'docker run -p 8098:8080 --name my-java-app-container -d my-java-app'
                 }
             }
         }
