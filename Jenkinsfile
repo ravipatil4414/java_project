@@ -10,14 +10,14 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean package' // Maven build to generate WAR
+                sh 'mvn clean package' 
             }
         }
         
         stage('Docker Build') {
             steps {
                 script {
-                    docker.build('my-java-app', '-f Dockerfile .') // Build Docker image using Dockerfile
+                    docker.build('my-java-app', '-f Dockerfile .') 
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                    // Stop and remove the existing container if it exists
+                    
                     sh 'docker stop my-java-app-container || true'
                     sh 'docker rm my-java-app-container || true'
                     
