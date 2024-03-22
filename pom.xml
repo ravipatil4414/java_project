@@ -15,13 +15,6 @@
       <version>3.8.1</version>
     </dependency>
   </dependencies>
-  <distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>Ravipatil-snapshots</name>
-        <url>http://localhost:8081/artifactory/libs-snapshot-frepo</url>
-    </snapshotRepository>
-</distributionManagement>
   <build>
     <finalName>01-maven-web-app</finalName>
     <plugins>
